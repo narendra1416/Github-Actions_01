@@ -1,4 +1,4 @@
-name: Anton Platform
+name: Anton Platform_new
 on: workflow_dispatch
 jobs:
   anton:
