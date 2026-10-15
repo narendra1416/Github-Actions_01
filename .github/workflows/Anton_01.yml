@@ -1,0 +1,8 @@
+name: Anton Platform
+on: workflow_dispatch
+jobs:
+  anton:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Hello Step
+        run: echo "Welcome to Anton Platform"
