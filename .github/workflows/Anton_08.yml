@@ -1,0 +1,13 @@
+# Context Variables
+
+name: Context Variables Anton
+on:
+  workflow_dispatch:   
+jobs:
+  context-anton:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Use Context Variables
+        run: |
+          echo "This workflow is triggered by the ${{github.event_name}}"
+          echo "The repository name is ${{github.repository}}"
