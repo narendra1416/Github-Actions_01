@@ -1,5 +1,13 @@
-name: Anton Organization Workflow on branches
-on: ["push", "pull_request"] 
+name: Anton org on multiple branches
+on: 
+  push:
+    branches:
+    - main
+    - develop
+    - 'release/**'
+  pull_request:
+    branches:
+    - main 
 jobs:
   build:
     runs-on: ubuntu-latest 
