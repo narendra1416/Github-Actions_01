@@ -1,0 +1,19 @@
+# If Condition in workflow.
+
+name: If condition in Anton org
+on:
+  push:
+    branches:
+      - main
+      - develop
+  workflow_dispatch:
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Run if branch is main
+        if: ${{ github.ref == 'refs/heads/main' }}
+        run: echo "Running build step for main branch"
+
+      - name: Run if branch is develop
+        run: echo "Running build step for develop branch"
