@@ -4,6 +4,8 @@ env:
   APP_ORG: Anton_dev
 jobs: 
   env_anton:
+    env:
+      APP_ORG: Anton_test
     runs-on: ubuntu-latest
     steps:
       - name: Anton env
