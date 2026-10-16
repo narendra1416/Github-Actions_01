@@ -7,10 +7,18 @@ on:
       environment:
         description: 'Choose the environment to deploy'
         required: true
+        type: choice
         default: 'dev'
+        options:
+          - dev
+          - staging
+          - production
+      artifact_tags:
+        description: 'Enter git tags for the deployment'
+        required: true
 jobs:
   inputs-anton:
     runs-on: ubuntu-latest
     steps:
       - name: Deploy the App
-        run: echo "Deploying the application to ${{inputs.environment}}"
+        run: echo "Deploying the ${{inputs.artifact_tags}} application to ${{inputs.environment}}"
