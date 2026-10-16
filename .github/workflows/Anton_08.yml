@@ -11,3 +11,7 @@ jobs:
         run: |
           echo "This workflow is triggered by the ${{github.event_name}}"
           echo "The repository name is ${{github.repository}}"
+          echo "The branch is ${{github.ref_name}}"
+      
+      - name: Print all variables
+        run: echo "${{toJson(github)}}"
