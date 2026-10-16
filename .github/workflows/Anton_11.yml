@@ -1,0 +1,12 @@
+# If Condition in workflow. 
+
+name: or condition in Anton org
+on:
+  workflow_dispatch:
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Run for Narendra or DevOps-shy
+        if: github.actor == 'Narendra' || github.actor == 'DevOps-shy'
+        run: echo "It is either Narendra or DevOps-shy who triggered the workflow"
