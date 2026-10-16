@@ -1,0 +1,21 @@
+name: Anton Platform
+on: workflow_dispatch
+jobs:
+  build:
+    runs-on: ubuntu-latest 
+    steps:
+      - name: Build Step
+        run: echo "A demo build step for Anton Platform"
+
+  test:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Test Phase
+        run: echo "A demo test step for Anton Platform"
+      
+  deploy:  
+    runs-on: ubuntu-latest 
+    steps:
+      - name: Deploy Phase
+        run: echo "A demo deploy step for Anton Platform"
+        
