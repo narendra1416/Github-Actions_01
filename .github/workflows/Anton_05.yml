@@ -13,8 +13,8 @@ jobs:
     runs-on: ubuntu-latest 
     steps:
       - name: Build Step
-        run: echo "My project name is, {{vars.ANTON_NAME}}" 
-        
+        run: echo "My project name is, ${{vars.ANTON_NAME}}" 
+
 
       
   
