@@ -9,12 +9,14 @@ jobs:
 
   test:
     runs-on: ubuntu-latest
+    needs: build
     steps:
       - name: Test Phase
         run: echo "A demo test step for Anton Platform"
       
   deploy:  
     runs-on: ubuntu-latest 
+    needs: test
     steps:
       - name: Deploy Phase
         run: echo "A demo deploy step for Anton Platform"
