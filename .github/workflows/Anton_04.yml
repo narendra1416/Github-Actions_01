@@ -1,5 +1,5 @@
-name: Anton Organization Workflow
-on: push 
+name: Anton Organization Workflow on branches
+on: ["push", "pull_request"] 
 jobs:
   build:
     runs-on: ubuntu-latest 
