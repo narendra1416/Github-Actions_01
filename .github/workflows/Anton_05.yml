@@ -1,13 +1,13 @@
 name: Anton org on multiple branches
-on: 
-  push:
-    branches:
-    - main
-    - develop
-    - 'release/**'
-  pull_request:
-    branches:
-    - main 
+on: workflow_dispatch 
+#  push:
+#    branches:
+#    - main
+#    - develop
+#    - 'release/**'
+#  pull_request:
+#    branches:
+#    - main 
 jobs:
   build:
     runs-on: ubuntu-latest 
