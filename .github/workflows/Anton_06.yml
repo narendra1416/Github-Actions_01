@@ -1,0 +1,10 @@
+name: Env Anton
+on: workflow_dispatch
+env:
+  APP_ORG: Anton_dev
+jobs: 
+  env_anton:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Anton env
+        run: echo "Anton env is connecting to $APP_ORG" 
