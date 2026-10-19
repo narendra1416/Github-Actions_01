@@ -1,0 +1,46 @@
+# If-with-function
+
+name: Anton If example
+on:
+ push:
+   branches:
+      - main
+      - develop
+      - feature/**
+
+jobs:
+  quality_checks:
+    if: startswith(github.ref_name, 'feature') && github.event_name == 'push'
+    runs-on: ubuntu-latest
+    steps:
+       - name: Perform code quality checks
+         run: echo "Performing code quality checks..."
+  dev_deploy:
+    if: github.ref_name == 'develop' && github.event_name == 'push'
+    runs-on: ubuntu-latest
+    steps:
+       - name: Dev Deployment
+         run: echo "Deploying the code to development environment..."
+  
+  prod_deploy:
+    if: github.ref_name == 'main' && github.event_name == 'push'
+    runs-on: ubuntu-latest
+    steps:
+       - name: Prod Deployment
+         run: echo "Deploying the code to production environment..."
+
+  Success_notify:
+    needs: [quality_checks, dev_deploy, prod_deploy]
+    if: always() && !failure()
+    runs-on: ubuntu-latest
+    steps:
+       - name: Success Notification
+         run: echo "Success email sent to the team..."
+
+  Failure_notify:
+    needs: [quality_checks, dev_deploy, prod_deploy]
+    if: failure()
+    runs-on: ubuntu-latest
+    steps:
+       - name: Failure Notification
+         run: echo "Failure email sent to the team..."
