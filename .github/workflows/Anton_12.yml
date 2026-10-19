@@ -1,0 +1,25 @@
+# Build JOb ==> Run when pull request is raised
+# Deploy Job ==> Run when commits are pushed to main.
+
+name: Anton_Build & Deploy
+on:
+  push:
+    branches:
+      - main
+  pull_request:
+    types: [opened, synchronize, reopened]
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    if: github.event_name == 'pull_request'
+    steps:
+        - name: BUild step
+          run: echo "Build step executed"
+
+  deploy:
+    runs-on: ubuntu-latest
+    if: github.event_name == 'push' && github.ref_name == 'main'
+    steps:
+        - name: Deploy step
+          run: echo "Deploy step executed"
