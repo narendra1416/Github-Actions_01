@@ -1,0 +1,16 @@
+# Build JOb ==> Run when pull request is raised
+# Deploy Job ==> Run when commits are pushed to main.
+
+name: Anton_Build & Deploy
+on:
+  pull_request:
+    types: [opened, synchronize, reopened]
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+        - name: BUild step
+          run: echo "Build step executed"
+
+          
