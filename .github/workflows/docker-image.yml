@@ -1,0 +1,14 @@
+name: Kuberentes CI
+on:
+  push:
+    branches:
+      - main
+jobs:
+  pyapp-cli:
+    runs-on: ubuntu-latest
+    steps:
+        - name: Checkout code
+          uses: actions/checkout@v4.2.2
+        - name: Build docker image
+          run: docker build -t narendra1416/flask-minikube:v1 -f flask-minikube/Dockerfile flask-minikube
+          
