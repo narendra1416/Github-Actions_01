@@ -16,8 +16,8 @@ spec:
     spec:
       containers:
         - name: flask-app
-          image: narendra1416/flask-minikube:local
-          imagePullPolicy: Never
+          image: narendra1416/flask-minikube:v1
+          imagePullPolicy: Always
           ports:
             - name: http
               containerPort: 5000
