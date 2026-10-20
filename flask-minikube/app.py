@@ -5,7 +5,7 @@ from flask import Flask, jsonify
 
 def create_app():
     app = Flask(__name__)
-    message = os.environ.get("APP_MESSAGE", "Hello from Flask on Minikube!")
+    message = os.environ.get("APP_MESSAGE", "Hello from Flask on Minikube on Anton platform!")
 
     @app.get("/")
     def home():
